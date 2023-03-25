@@ -40,7 +40,8 @@ public class House extends Building {
       throw new RuntimeException(name + " is not in " + this.name);
     }
     this.residents.remove(name);
-    return name + "moved out. Goodbye :-(";
+    System.out.println(name + " moved out. Goodbye :(");
+    return name;
   }
 
   public boolean isResident(String person) {
@@ -68,10 +69,13 @@ public class House extends Building {
     House morrow = new House("Morrow", "The Quad", 4, false);
     System.out.println(morrow);
     morrow.moveIn("Jordan");
-    morrow.moveIn("Jordan");
+    morrow.moveIn("Mike");
     System.out.println(morrow);
     House king = new House("King", "The Quad", 3, true);
     System.out.println(king);
+    morrow.moveOut("Jordan");
+    System.out.println(morrow);
+
   }
 
 }
