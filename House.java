@@ -3,13 +3,15 @@ import java.util.ArrayList;
 /* This is a stub for the House class */
 public class House extends Building {
 
-  private ArrayList<String> residents;
+  private ArrayList<String> residents; 
+  // The <String> tells Java what kind of data we plan to store IN the ArrayList
   private boolean hasDiningRoom;
 
   public House(String name, String address, int nFloors, boolean hasDiningRoom) {
     super(name, address, nFloors);
     this.residents = new ArrayList<String>();
     this.hasDiningRoom = hasDiningRoom;
+    System.out.println("You have built a house: 🏠");
   }
 
   /** Accessor for hasDiningRoom */
@@ -31,6 +33,22 @@ public class House extends Building {
     // if we're good to go, add to roster
     this.residents.add(name);
     System.out.println(name + " has just moved into " + this.name + "! Go say hello :-)");
+  }
+
+  public String moveOut(String name) {
+    if (!this.residents.contains(name)) {
+      throw new RuntimeException(name + " is not in " + this.name);
+    }
+    this.residents.remove(name);
+    return name + "moved out. Goodbye :-(";
+  }
+
+  public boolean isResident(String person) {
+    if (this.residents.contains(name)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public String toString() {
