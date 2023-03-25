@@ -12,26 +12,26 @@ public class Library extends Building{
   }
   
   public void addTitle(String title) {
-    if (this.collection.contains(title)) {
+    if (this.collection.containsKey(title)) {
       throw new RuntimeException(title + " is already in " + this.name);
     }
-    // if we're good to go, add to roster
     this.collection.put(title, true);
     System.out.println(title + " has been added to " + this.name + ".");
   }
 
   public String removeTitle(String title) {
-    if (!this.collection.contains(title)) {
+    if (!this.collection.containsKey(title)) {
       throw new RuntimeException(title + " is not in " + this.name);
-    }
+    } 
     this.collection.remove(title);
-    return title + " removed from " + this.name;
+    System.out.println(title + " removed from " + this.name);
+    return title;
   }
 
   //unavailable when 1. the book is not in the library
   //2. the book is already checked out
   public void checkOut(String title) {
-    if (!this.collection.contains(title)) {
+    if (!this.collection.containsKey(title)) {
       throw new RuntimeException(title + " is not in " + this.name);
     } else if (this.collection.get(title) == false) {
       throw new RuntimeException(title + " is already checked out.");
@@ -65,9 +65,11 @@ public class Library extends Building{
   } 
   
   public void printCollection() {
+    System.out.println("=====Collection=====");
     for (Map.Entry<String, Boolean> collection : this.collection.entrySet()) {
       System.out.println("Title: " + collection.getKey() + "\nAvailability: " + collection.getValue());
     }
+    System.out.println("====================");
   }
   // prints out the entire collection in an easy-to-read way (including checkout status)
   public static void main(String[] args) {
@@ -76,6 +78,18 @@ public class Library extends Building{
     neilson.addTitle("Dog");
     neilson.addTitle("Cat");
     neilson.printCollection();
+    neilson.removeTitle("Sheep");
+    neilson.printCollection();
+    //neilson.removeTitle("Sheep");
+    //neilson.addTitle("Dog");
+    neilson.checkOut("Cat");
+    neilson.printCollection();
+    neilson.returnBook("Cat");
+    neilson.printCollection();
+    //neilson.returnBook("Cat");
+    neilson.checkOut("Dog");
+    neilson.printCollection();
+    neilson.checkOut("Dog");
   }
   
   }
