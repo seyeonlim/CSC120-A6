@@ -1,6 +1,5 @@
 import java.util.Hashtable;
 import java.util.Map;
-import java.util.Set;
 /* This is a stub for the Library class */
 public class Library extends Building{
 
@@ -66,8 +65,7 @@ public class Library extends Building{
   } 
   
   public void printCollection() {
-    Set<Map.Entry<String, Boolean>> collections = this.collection.entrySet();
-    for (Map.Entry<String, Boolean> collection : collections) {
+    for (Map.Entry<String, Boolean> collection : this.collection.entrySet()) {
       System.out.println("Title: " + collection.getKey() + "\nAvailability: " + collection.getValue());
     }
   }
