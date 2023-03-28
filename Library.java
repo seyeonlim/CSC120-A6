@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 00, 2023
+ * @version March 28, 2023
  * Description: A class that creates a library with a certain name, address,
  *              and number of floors. Allows to add or remove a certain book from the collection,
  *              check out or return a book, and returns the availability of the book or whether the collection

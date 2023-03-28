@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March 00, 2023
+ * @version March 28, 2023
  * Description: A class that creates a house with a certain name, address, and number of floors. 
  *              The house may or may not have a dining room. Allows residents to move in or out of the
  *              house, print out house description, and return the number of residents, whether a particular

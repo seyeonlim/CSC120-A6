@@ -1,7 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
  * @author Seyeon Lim
- * @version March00, 2023
+ * @version March 28, 2023
  * Description: A class that creates a cafe with a certain name, address, and number of floors.
  *              Allows us to sell coffee, restock inventory, and prints out the inventory.
  */

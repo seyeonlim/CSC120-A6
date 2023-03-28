@@ -1,8 +1,7 @@
 /**
  * Course: CSC 120 (section 2)
- * 
  * @author Seyeon Lim
- * @version March 00, 2023
+ * @version March 28, 2023
  *          Description: A class that creates a building with a certain name, address, and number of floors.
  *          Allows access to the name, address, and number of floors of the building.
  */
