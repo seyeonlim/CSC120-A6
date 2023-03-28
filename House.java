@@ -27,7 +27,6 @@ public class House extends Building {
     super(name, address, nFloors);
     this.residents = new ArrayList<String>();
     this.hasDiningRoom = hasDiningRoom;
-    System.out.println("You have built a house: 🏠");
   }
 
   /**

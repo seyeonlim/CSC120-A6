@@ -25,7 +25,6 @@ public class Library extends Building{
   public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
     this.collection = new Hashtable<String, Boolean>();
-    System.out.println("You have built a library: 📖");
   }
   
   /**
@@ -94,7 +93,7 @@ public class Library extends Building{
    * @return whether the book is in the collection or not
    */
   public boolean containsTitle(String title) {
-    if (this.collection.contains(title)) {
+    if (this.collection.containsKey(title)) {
       return true;
     } else {
       return false;
